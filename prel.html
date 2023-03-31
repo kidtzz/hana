@@ -31,7 +31,7 @@
             rel="stylesheet"
             type="text/css"
         />
-        <title>Script HTML buat Kamu</title>
+        <title>Buat Kamu</title>
         <link
             rel="icon"
             type="image/x-icon"
@@ -134,7 +134,7 @@
             <div id="Tombol"><a id="By">💌 Lanjut</a></div>
 
             <p id="katatambahan" class="sembunyi">
-                Gajadi deh soalnya kamu bau wleee 😜
+                Gajadi deh soalnya kamu punya.nya wleee 😜
             </p>
 
             <div id="pesanditolak">
@@ -200,20 +200,17 @@
             };
 
             async function inipesan() {
-                var { value: nama } = await swals.fire({
-                    title: "Masukin Nama sajdjh",
-                    input: "text",
-                });
-
-                if (nama && nama.length < 11) {
+                var nama = "Apriliana.istigh";
+                console.log(nama);
+                if (nama && nama.length < 100) {
                     window.nama = nama;
                     vketikhalo = ucapan + nama + " ✨";
                     mulainama();
                 } else {
-                    await swals.fire(
-                        "Ups!",
-                        "Nama tidak boleh kosong atau lebih dari 10 karakter, ya!"
-                    );
+                    // await swals.fire(
+                    //     "Ups!",
+                    //     "Nama tidak boleh kosong atau lebih dari 10 karakter, ya!"
+                    // );
                     inipesan();
                 }
             }
@@ -458,8 +455,8 @@
                     waitUntilVisible: true,
                     lifelike: true,
                     afterComplete: function () {
-                        pesan5.innerHTML = vketik5 + " ><";
-                        setTimeout(aktipesan6, 800);
+                        pesan5.innerHTML = vketik5 + " >< ";
+                        setTimeout(aktipesan6, 2000);
                     },
                 }).go();
             }
@@ -468,9 +465,12 @@
             function aktipesan6() {
                 wallpaper.style = "transform: scale(1.5);";
                 new TypeIt("#pesan6", {
-                    strings: ["" + vketik6],
+                    strings: [
+                        "Be Happy. be Awesome. May peace be upon you. Happy Birthday!" +
+                            vketik6,
+                    ],
                     startDelay: 1,
-                    speed: 52,
+                    speed: 100,
                     cursor: true,
                     waitUntilVisible: true,
                     lifelike: true,
